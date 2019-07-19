@@ -12,3 +12,6 @@
 */
 
 Route::get('/', 'JobController@index');
+##creating new routes for job application form
+Route::get('/create', 'JobController@create');
+Route::post('/save', 'JobController@save');

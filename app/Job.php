@@ -7,13 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Job extends Model
 {
     const CREATED_AT = 'published_at';
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'title', 'description', 'location', 'status',
+        'title', 'description', 'location', 'status', 'company_id',
     ];
+
+    public function company() {	
+		return $this->belongsTo('App\Company');
+	}
 }
